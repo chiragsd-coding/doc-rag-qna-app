@@ -107,24 +107,27 @@ src/
     └── enums.ts
 
 
-angular-frontend/
+frontend/
+├── e2e/                                    
 ├── src/
 │   ├── app/
-│   │   ├── app.component.ts
-│   │   ├── app.component.html
-│   │   ├── app.module.ts
-│   │   ├── app.service.ts
-│   │   ├── document/                # Document-related components and services
-│   │   │   ├── document-upload.component.ts
-│   │   │   └── document-query.component.ts
-│   │   └── auth/                    # User authentication components and services
-│   │       ├── login.component.ts
-│   │       └── register.component.ts
-│   ├── assets/
-│   └── environments/                # Environment settings (e.g., API URLs)
-├── angular.json
-├── package.json
-└── tsconfig.json
+│   │   ├── auth/                           
+│   │   ├── components/                     
+│   │   ├── document/                       
+│   │   ├── ingestion/                      
+│   │   ├── qna/                            
+│   │   ├── user/                           
+│   │   ├── shared/                         
+│   │   ├── app.component.ts                
+│   │   ├── app.module.ts                   
+│   │   └── app-routing.module.ts           
+│   ├── assets/                             
+│   ├── environments/                       
+│   ├── styles/                             
+├── angular.json                            
+├── package.json                            
+└── tsconfig.json                           
+
 
 
 Backend Setup
