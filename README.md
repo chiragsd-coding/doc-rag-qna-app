@@ -158,6 +158,79 @@ Run FastAPI server: To start the FastAPI server, run:
 
     uvicorn app:app --reload
 
+Running the Test Cases for Python Backend
+
+To ensure that your Python backend is working as expected, we use pytest to run the test cases.
+Prerequisites
+
+Before running the tests, ensure the following dependencies are installed:
+
+    Python 3.8+ (or higher)
+    pytest
+    pytest-asyncio (for async tests)
+    httpx (for FastAPI test client)
+
+Installation of Dependencies
+
+To install the required dependencies, run the following command in your terminal:
+
+pip install -r requirements.txt
+
+Make sure requirements.txt includes the following:
+
+pytest
+pytest-asyncio
+httpx
+
+Running the Test Cases
+
+To run the test cases for the Python backend:
+
+    Navigate to the project directory where the tests folder is located.
+
+    Run the test cases using pytest by executing the following command in your terminal:
+
+    pytest --maxfail=5 --disable-warnings -q
+
+        --maxfail=5: Limits the number of test failures to 5 (you can adjust this number).
+        --disable-warnings: Disables warnings to keep the output clean.
+        -q: Runs pytest in quiet mode, reducing the amount of output.
+
+    Viewing Test Results: After running the tests, you will see the test results in your terminal. It will show which tests passed, failed, or were skipped.
+
+Running Specific Test Files
+
+To run a specific test file, use the following command:
+
+pytest tests/test_document_loader.py
+
+Replace test_document_loader.py with the name of the test file you want to run.
+Running Tests for Specific Test Cases
+
+If you want to run a specific test case within a file, use the :: syntax:
+
+pytest tests/test_user_service.py::test_create_user
+
+This command runs only the test_create_user test case within the test_user_service.py file.
+Additional Options
+
+    Generate a Test Report: If you want to generate a test report in HTML format, you can use the pytest-html plugin. First, install it:
+
+pip install pytest-html
+
+Then run the following command to generate an HTML report:
+
+    pytest --maxfail=5 --disable-warnings -q --html=report.html
+
+    The test report will be saved as report.html.
+
+Debugging Failed Tests
+
+If some tests fail, you can run the tests with the --pdb option to enter the Python debugger (pdb) when a failure occurs:
+
+pytest --pdb
+
+
 2. NestJS Setup
 
     Install Node.js dependencies: Navigate to the nestjs/ directory and install the dependencies:
