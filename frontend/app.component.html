@@ -1,0 +1,20 @@
+<div style="text-align:center; padding: 20px;">
+    <h1>Document Management System</h1>
+  
+    <div>
+      <h3>Upload Document</h3>
+      <input type="file" (change)="onFileSelected($event)" />
+      <button (click)="uploadDocument()">Upload</button>
+    </div>
+  
+    <div>
+      <h3>Ask a Question</h3>
+      <input type="text" [(ngModel)]="query" placeholder="Enter your question" />
+      <button (click)="queryDocument()">Submit</button>
+    </div>
+  
+    <div *ngIf="answer">
+      <h4>Answer: {{ answer }}</h4>
+    </div>
+  </div>
+  
