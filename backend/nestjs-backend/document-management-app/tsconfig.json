@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",                         // Target ECMAScript version
+      "module": "CommonJS",                       // Module system to use (CommonJS for Node.js apps)
+      "moduleResolution": "node",                 // Use Node.js style module resolution
+      "strict": true,                             // Enable strict type-checking options
+      "esModuleInterop": true,                    // Enable interop between CommonJS and ES Modules
+      "skipLibCheck": true,                       // Skip type checking of declaration files
+      "forceConsistentCasingInFileNames": true,   // Ensure consistent casing in filenames
+      "outDir": "./dist",                         // Output directory for compiled JavaScript
+      "rootDir": "./src",                         // Root directory for TypeScript source files
+      "baseUrl": "./",                            // Base URL for module resolution
+      "paths": {
+        "@shared/*": ["src/shared/*"],            // Path alias for shared modules
+        "@modules/*": ["src/modules/*"],          // Path alias for modules
+        "@config/*": ["src/config/*"],            // Path alias for configuration
+        "@common/*": ["src/common/*"]             // Path alias for common utils or types
+      },
+      "resolveJsonModule": true,                  // Allows importing JSON files as modules
+      "types": ["node", "jest"],                  // Type definitions for Node.js and Jest
+      "incremental": true,                        // Enables incremental compilation for faster builds
+      "removeComments": true,                     // Remove comments from the output JavaScript files
+      "allowJs": true                             // Allow JavaScript files in the project (if needed)
+    },
+    "include": [
+      "src/**/*.ts"                               // Include all TypeScript files under src/
+    ],
+    "exclude": [
+      "node_modules",                             // Exclude node_modules
+      "dist"                                      // Exclude dist folder (output)
+    ]
+  }
+  

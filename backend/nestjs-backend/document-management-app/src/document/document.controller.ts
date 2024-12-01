@@ -1,22 +1,30 @@
-import { Controller, Post, Body, Get, Param } from '@nestjs/common';
+import { Controller, Post, Body, Param, Delete, Get, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { DocumentService } from './document.service';
+import { CreateDocumentDto } from './dto/create-document.dto';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('documents')
 export class DocumentController {
   constructor(private readonly documentService: DocumentService) {}
 
-  @Post()
-  async uploadDocument(@Body() documentData: { title: string, file_path: string }) {
-    return this.documentService.create(documentData);
+  @Post('upload')
+  @UseInterceptors(FileInterceptor('file'))
+  async uploadDocument(@Body() createDocumentDto: CreateDocumentDto, @UploadedFile() file: Express.Multer.File) {
+    return this.documentService.saveDocument(createDocumentDto, file);
   }
 
   @Get()
-  async getAllDocuments() {
-    return this.documentService.findAll();
+  async getDocuments() {
+    return this.documentService.getAllDocuments();
   }
 
   @Get(':id')
-  async getDocument(@Param('id') id: number) {
-    return this.documentService.findOne(id);
+  async getDocumentById(@Param('id') id: string) {
+    return this.documentService.getDocumentById(id);
+  }
+
+  @Delete(':id')
+  async deleteDocument(@Param('id') id: string) {
+    return this.documentService.deleteDocument(id);
   }
 }

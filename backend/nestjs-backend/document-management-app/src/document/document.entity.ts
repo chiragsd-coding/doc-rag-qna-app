@@ -2,15 +2,24 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Document {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column()
   title: string;
 
   @Column()
-  filePath: string;
+  description: string;
 
-  @Column({ default: new Date() })
-  uploadDate: Date;
+  @Column()
+  path: string;
+
+  @Column()
+  filename: string;
+
+  @Column()
+  size: number;
+
+  @Column()
+  mimetype: string;
 }

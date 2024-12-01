@@ -1,0 +1,67 @@
+{
+    "name": "fullstack-project",
+    "version": "1.0.0",
+    "description": "Fullstack project with NestJS backend, FastAPI backend, and Angular frontend.",
+    "main": "dist/main.js",
+    "scripts": {
+      "start": "npm run start:nest",                                // Start the NestJS server
+      "start:nest": "nest start",                                    // NestJS specific start script
+      "start:angular": "cd frontend && ng serve",                    // Start the Angular frontend
+      "build:nest": "nest build",                                     // Build NestJS backend
+      "build:angular": "cd frontend && ng build",                    // Build Angular frontend
+      "build": "npm run build:nest && npm run build:angular",         // Build both backends and frontend
+      "dev": "npm run dev:nest && npm run start:angular",             // Run both NestJS and Angular in dev mode
+      "dev:nest": "nest start --watch",                               // NestJS in development mode (watch for changes)
+      "start:angular": "cd frontend && ng serve",                    // Start Angular development server
+      "test:nest": "nest test",                                       // Run unit tests for NestJS
+      "test:angular": "cd frontend && ng test",                       // Run unit tests for Angular
+      "test": "npm run test:nest && npm run test:angular",            // Run tests for both NestJS and Angular
+      "lint": "npm run lint:nest && npm run lint:angular",            // Run lint for both NestJS and Angular
+      "lint:nest": "eslint './src/**/*.ts' --fix",                    // Lint NestJS backend code
+      "lint:angular": "cd frontend && eslint './src/**/*.ts' --fix"   // Lint Angular frontend code
+    },
+    "dependencies": {
+      "nestjs": "^9.0.0",                          // NestJS framework for backend
+      "typescript": "^5.0.0",                      // TypeScript compiler
+      "class-validator": "^0.14.0",                 // Validation library used by NestJS
+      "class-transformer": "^0.5.1",                // Data transformation library for NestJS
+      "axios": "^1.0.0",                           // HTTP client for communication (e.g., between FastAPI and NestJS)
+      "reflect-metadata": "^0.1.13",               // Used by NestJS for metadata reflection
+      "rxjs": "^7.0.0",                            // Reactive extensions for JavaScript (RxJS)
+      "fastify": "^4.0.0",                         // Fastify HTTP server (optional, for faster NestJS performance)
+      "dotenv": "^10.0.0",                         // To manage environment variables
+      "@nestjs/platform-express": "^9.0.0",        // NestJS platform for Express (used for file uploads with multer)
+      "multer": "^1.4.4",                          // Middleware for handling multipart form-data (file uploads)
+      "aws-sdk": "^2.1336.0"                       // AWS SDK (optional, if you're planning to use AWS S3 for file upload)
+    },
+    "devDependencies": {
+      "eslint": "^8.0.0",                          // Linter for maintaining code quality
+      "prettier": "^2.0.0",                        // Code formatter for consistent code style
+      "jest": "^29.0.0",                           // Testing framework for NestJS
+      "ts-jest": "^29.0.0",                        // TypeScript support for Jest
+      "ts-node": "^10.0.0",                        // TypeScript execution engine for NestJS
+      "nestjs-cli": "^9.0.0",                      // NestJS CLI for development
+      "webpack": "^5.0.0",                         // Webpack for bundling frontend (if needed)
+      "webpack-cli": "^5.0.0",                     // Webpack CLI for building and running frontend
+      "angular-eslint": "^15.0.0",                 // ESLint for Angular (used in frontend)
+      "eslint-plugin-import": "^2.25.0",           // Linter plugin for handling imports
+      "angular": "^15.0.0"                         // Angular dependencies
+    },
+    "engines": {
+      "node": ">=16.0.0",                           // Minimum Node.js version required
+      "npm": ">=7.0.0"                              // Minimum NPM version required
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/your-username/fullstack-project.git"
+    },
+    "keywords": [
+      "nestjs",
+      "fastapi",
+      "angular",
+      "fullstack"
+    ],
+    "author": "Your Name",
+    "license": "MIT"
+  }
+  
